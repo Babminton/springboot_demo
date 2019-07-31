@@ -1,15 +1,16 @@
 
-person:
-   username: zeng
-   age: 20
-   boss: false
-   birthday: 2019/07/31
-   maps: {k1: v1,k2: v2}
-   lists:
-     - zeng
-     - xiang
-     - qu
-   dog:
-     name: 小狗
-     age: 3
+#
+#  person:
+#   username: zeng
+#   age: 20
+#   boss: false
+#   birthday: 2019/07/31
+#   maps: {k1: v1,k2: v2}
+#   lists:
+#     - zeng
+#     - xiang
+#     - qu
+#   dog:
+#     name: 小狗
+#     age: 3
 
