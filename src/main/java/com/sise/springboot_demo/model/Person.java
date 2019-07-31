@@ -6,9 +6,13 @@ package com.sise.springboot_demo.model;
  *@create: 2019-07-31 11:45
  */
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
+import javax.validation.constraints.Email;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -22,11 +26,35 @@ import java.util.Map;
  *
  */
 
-@Component
-@ConfigurationProperties(prefix = "person")
-public class Person {
+/**
+ * @PropertySource：加载指定的配置文件；
+ */
 
+@Component
+//@Validated
+//@ConfigurationProperties(prefix = "person")
+@PropertySource(value = {"classpath:application.properties"})
+public class Person {
+    /**
+     * @value 也是一种获取配置文件值的方式，相当于
+     * <bean class="Person">
+     * <property name="lastName" value="字面量/${key}从环境变量、配置文件中获取值/#{SpEL}">
+     * </property>
+     * </bean>
+     */
+
+    /**
+     * @Email
+     * username必须是邮箱格式
+     * @Validated
+     * @ConfigurationProperties(prefix = "person")  //默认从全局配置文件中获取值；
+     *
+     * 特别的@Value不支持数据校验
+     */
+   // @Value("${person.last-name}")
+  //  @Email
     private String username;
+ //   @Value("#{11*2}")
     private Integer age;
     private boolean boss;
     private Date birthday;

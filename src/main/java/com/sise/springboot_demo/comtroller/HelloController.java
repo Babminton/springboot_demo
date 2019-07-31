@@ -1,5 +1,6 @@
 package com.sise.springboot_demo.comtroller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,8 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
 
-    @RequestMapping("hello")
+    @Value("${person.username}")
+    private String name;
+
+    @RequestMapping("say_hello")
     public String hello(){
-           return "Hello World!springboot_demo 2019";
+           return "Hello World!springboot_demo 2019 "+name;
     }
 }
