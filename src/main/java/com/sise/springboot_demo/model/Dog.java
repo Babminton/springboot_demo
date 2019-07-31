@@ -6,8 +6,18 @@ package com.sise.springboot_demo.model;/*@program: springboot_demo
 
 public class Dog {
 
-    String name;
-    Integer age;
+    private String name;
+    private Integer age;
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
+
 
     public String getName() {
         return name;
